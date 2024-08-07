@@ -9,21 +9,22 @@
     <div style="width: 100%; max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); overflow: hidden;">
         <div style="background-color: #ffffff; color: #333333; padding: 20px; text-align: center;">
             <img src="https://logo.svg" alt="Company Logo" style="max-width: 150px; height: auto; margin-bottom: 10px;">
-            <h1 style="margin: 0; font-size: 24px;">Solarwinds Orion Monitoring System Alert</h1>
+            <h1 style="margin: 0; font-size: 24px;">Solarwinds Monitoring System Alert</h1>
         </div>
         <div style="padding: 20px; color: #333333;">
-            <div style="background-color: #008000; color: #000000; padding: 15px; border-radius: 4px; margin-bottom: 20px;">
-                <strong>Alert:</strong> ${NodeName} is now UP
+            <div style="background-color: #ff1e00; color: #333333; padding: 15px; border-radius: 4px; margin-bottom: 20px;">
+                <strong>Alert:</strong>  ${NodeName} has rebooted at ${LastBoot}
             </div>
             <p>Dear Team,</p>
-            <p>This is an automated alert from our Monitoring System. The following condition has been cleared:</p>
+            <p>This is an automated alert from our Monitoring System. The following condition has been triggered:</p>
             <ul style="padding-left: 20px;">
                 <li><strong>Node:</strong> ${N=SwisEntity;M=Node.DisplayName}</li>
                 <li><strong>Metric:</strong> ${N=Alerting;M=AlertName}</li>
-                <li><strong>Current Response Time:</strong> ${AvgResponseTime}</li>
+                <li><strong>Alert</strong>${N=Alerting;M=AlertMessage}</li>
                 <li><strong>Time:</strong> ${N=Alerting;M=AlertTriggerTime;F=DateTime}</li>
             </ul>
-            </div>
+            <p>Please take the necessary actions to address this issue. 
+        </div>
         <div style="background-color: #f4f4f4; color: #333333; padding: 10px; text-align: center; font-size: 12px;">
             &copy; 2024 Company Name. All rights reserved.
         </div>
